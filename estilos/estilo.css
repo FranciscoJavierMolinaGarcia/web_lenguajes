@@ -1,0 +1,196 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    /* CORRECCIÓN: Salir de carpeta estilos (../) y entrar a Imagenes */
+    background: linear-gradient(rgba(173,216,35,0.230), rgba(0,0,25,0.85)), 
+                url('../Imagenes/Fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #e8e8e8; 
+    padding-top: 85px; 
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+
+/* Barra de superior */
+#barra-superior {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(10,5,35,0.97); /* Cambiado a oscuro para contraste */
+    backdrop-filter: blur(15px);
+    padding: 15px 30px; z-index: 9999;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 5px 30px rgba(255,215,0,0.4); 
+    border-bottom: 3px solid #ffd700;
+}
+
+/* Login*/
+.login-container {
+    background: #7b1fa2 !important;
+    color: #ab47bc !important; 
+    border: none !important; 
+    padding: 12px 24px !important; 
+    border-radius: 30px !important; 
+    font-weight: bold !important;
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    order: -2 !important; 
+    margin-right: auto !important;
+    box-shadow: #ab47bc !important;
+}
+
+.btn-login {
+    background: #7b1fa2 !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 30px !important;
+    box-shadow: #ab47bc !important;
+    padding: 12px 25px !important;
+}
+
+.btn-login:hover { 
+    background: #ab47bc !important;
+    transform: scale(1.05); 
+}
+
+/* Logo ONE PIECE WIKI*/
+.logo-titulo { 
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 20px !important;
+}
+.logo-placeholder {
+    width: 60px; height: 60px; border-radius: 50%; overflow: hidden;
+    background: #ffffff;
+}
+.logo-img { width: 100%; height: 100%; object-fit: contain; }
+.logo-titulo h1 {
+    color: #ADD8E6; font-size: 32px;
+    margin: 0;
+}
+
+/* SAGAS */
+.dropdown { 
+    position: relative; 
+    order: 999 !important; 
+    margin-left: auto !important;
+}
+.dropbtn {
+    background: linear-gradient(135deg, #7b1fa2, #ab47bc); color: #fff;
+    border: none; padding: 14px 28px; border-radius: 35px; cursor: pointer;
+    font-weight: bold; font-size: 18px; transition: all 0.3s;
+}
+.dropbtn:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 30px rgba(123,31,162,0.5); 
+}
+
+.dropdown-content {
+    display: none; position: absolute; right: 0; top: 110%; 
+    background: rgba(26,10,46,0.98); min-width: 250px; border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.9); z-index: 10000; border: 2px solid #ffd700;
+    overflow: hidden;
+}
+.dropdown-content a {
+    color: #e8e8e8; padding: 18px 25px; text-decoration: none; display: block;
+    transition: all 0.3s; border-bottom: 1px solid rgba(255,215,0,0.2);
+}
+.dropdown-content a:hover { 
+    background: linear-gradient(90deg, rgba(255,215,0,0.2), rgba(123,31,162,0.3)); 
+    color: #ffd700; padding-left: 35px; 
+}
+.dropdown-content.show { display: block; }
+
+/* Orden se la barra superior inicio de sesion izquierda, logo y nombre en el centro y ascos derecha */
+#barra-superior {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 15px 30px !important;
+}
+
+
+#contenedor-principal {
+    position: relative; max-width: 1400px; margin: 0 auto; padding: 50px 25px;
+}
+
+
+.sombrero-luffy {
+    position: absolute; top: 25px; right: 40px; width: 80px; height: 80px;
+    background: conic-gradient(from 0deg, #ffcc00, #ff6600, #cc0000, #ffcc00);
+    border-radius: 50%; box-shadow: 0 0 30px #ffd700;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+
+.aviso-sticky {
+    position: sticky; top: 85px; background: linear-gradient(90deg, #7b1fa2, #ab47bc);
+    padding: 20px; text-align: center; font-weight: bold; font-size: 20px;
+    margin: 0 0 50px 0;
+}
+
+
+.seccion-grid h2 {
+    color: #ffd700; text-align: center; font-size: 42px; margin-bottom: 50px;
+    text-shadow: 4px 4px 12px #000;
+}
+.grid-personajes {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+.personaje-card {
+    background: rgba(20,10,50,0.85); border-radius: 25px; padding: 25px;
+    text-align: center; transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    border: 3px solid transparent; backdrop-filter: blur(10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+.personaje-card:hover {
+    transform: translateY(-15px) rotate(1deg); border-color: #ffd700;
+    box-shadow: 0 25px 60px rgba(255,215,0,0.4);
+}
+.personaje-card img {
+    width: 100%; height: 320px; object-fit: cover; border-radius: 20px;
+    margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+.personaje-card p {
+    font-weight: bold; font-size: 20px; color: #ffd700;
+    text-shadow: 2px 2px 6px #000;
+}
+
+
+.recuadro-datos {
+    float: right; width: 320px; background: rgba(10,5,40,0.92);
+    padding: 30px; margin: 40px 0 60px 40px; border-radius: 25px;
+    border-left: 6px solid #ffd700; backdrop-filter: blur(10px);
+}
+.recuadro-datos h3 { color: #ffd700; margin-bottom: 25px; font-size: 26px; }
+.recuadro-datos ul li {
+    padding: 12px 0; border-bottom: 1px solid rgba(255,215,0,0.15);
+    font-size: 16px;
+}
+.recuadro-datos ul li:first-child {
+    font-weight: bold; color: #ffd700; border-top: 3px solid #ffd700; padding-top: 20px;
+}
+
+
+.footer-fijo {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: rgba(0,0,25,0.95); padding: 20px; text-align: center;
+    border-top: 3px solid #ffd700; font-size: 18px; backdrop-filter: blur(10px);
+}
+
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+.sombrero-luffy {
+    display: none !important;
+}
